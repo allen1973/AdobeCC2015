@@ -126,7 +126,7 @@
 
 url='http://ccmdl.adobe.com/AdobeProducts/PHSP/16/osx10/Photoshop_16_LS20.dmg'
 
-function dojob()
+function download()
 {
 	name=$(echo ${1} | awk -F/ '{print $NF}')
 	wget --server-response \
@@ -137,4 +137,4 @@ function dojob()
 	# 	 ${1} -o ${2}/${name}
 }
 
-dojob ${url} ~/Downloads
+download ${url} ~/Downloads
