@@ -124,8 +124,6 @@
 # http://ccmdl.adobe.com/AdobeProducts/PRE/14/win64/PremiereElements_14_LS26_win64.7z
 # http://ccmdl.adobe.com/AdobeProducts/PRE/14/osx10/PremiereElements_14_WWEFDJ.dmg
 
-url='http://ccmdl.adobe.com/AdobeProducts/PHSP/16/osx10/Photoshop_16_LS20.dmg'
-
 function download()
 {
 	name=$(echo ${1} | awk -F/ '{print $NF}')
@@ -137,4 +135,16 @@ function download()
 	# 	 ${1} -o ${2}/${name}
 }
 
-download ${url} ~/Downloads
+list='http://ccmdl.adobe.com/AdobeProducts/AEFT/14/osx10-64/AfterEffects_14_LS20.dmg
+http://ccmdl.adobe.com/AdobeProducts/AUDT/8/osx10-64/Audition_8_LS20.dmg
+http://ccmdl.adobe.com/AdobeProducts/LTRM/6/osx10/Lightroom_6_LS11.dmg
+http://ccmdl.adobe.com/AdobeProducts/PPRO/9/osx10-64/PremierePro_9_LS20.dmg
+http://ccmdl.adobe.com/AdobeProducts/CPTV/9/osx10/Captivate_9_LS21.dmg
+http://ccmdl.adobe.com/AdobeProducts/AME/9/osx10-64/AdobeMediaEncoder_9_LS20.dmg'
+echo "${list}" | while read url
+do
+	download ${url} ~/Downloads
+done
+
+# download 'http://ccmdl.adobe.com/AdobeProducts/FLPR/15/osx10-64/Flash_Professional_15_LS20.dmg' ~/Downloads
+# download 'http://ccmdl.adobe.com/AdobeProducts/PHSP/16/osx10/Photoshop_16_LS20.dmg' ~/Downloads
